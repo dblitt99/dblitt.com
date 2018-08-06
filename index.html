@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Daniel Blittschau - dblitt.com</title>
+  <meta name="description" content="Daniel Blittschau | dblitt.com">
+  <title>Daniel Blittschau | dblitt.com</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
   <!-- https://realfavicongenerator.net -->
@@ -36,6 +37,10 @@ body, html {
   width: 24rem;
 }
 
+#my-picture-placeholder {
+  width: 24rem;
+}
+
 #my-email {
   color: #6699CC;
 }
@@ -58,10 +63,16 @@ a {
   #my-picture {
     width: 18rem;
   }
+  #my-picture-placeholder {
+    width: 18rem;
+  }
 }
 /* iPhone 5/SE Portrait */
 @media only screen and (max-width : 320px) {
   #my-picture {
+    width: 16rem;
+  }
+  #my-picture-placeholder {
     width: 16rem;
   }
   .title.is-2 {
@@ -73,12 +84,17 @@ a {
   #my-picture {
     width: 12rem;
   }
+  #my-picture-placeholder {
+    width: 12rem;
+  }
 }
   </style>
 </head>
 <body>
     <div class="is-horizontal-center">
-      <img class="is-horizontal-center" id="my-picture" src="https://avatars3.githubusercontent.com/u/11153164">
+      <div class="is-horizontal-center" id="my-picture-placeholder">
+        <img class="is-horizontal-center" id="my-picture" src="https://avatars3.githubusercontent.com/u/11153164">
+      </div>
       <h1 class="title is-2 is-header" id="my-name">Daniel Blittschau</h1>
       <h2 class="subtitle is-4" id="my-email"><a href="mailto:dblitt99@gmail.com">&lt;dblitt99@gmail.com&gt;</a></h2>
       <div id="icons">
