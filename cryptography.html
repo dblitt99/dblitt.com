@@ -25,6 +25,7 @@
   pre.ssh-key {
     white-space: normal;
     word-wrap: break-word;
+    max-height: 180px;
   }
   pre.ssh-key:hover {
     cursor: pointer;
@@ -72,7 +73,10 @@
 for (let item of document.querySelectorAll('pre.ssh-key')) {
   item.onclick = () => {
     copyToClipboard(item.innerText);
-    item.classList.add('ssh-key-copied')
+    item.classList.add('ssh-key-copied');
+    setTimeout(() => {
+      item.classList.remove('ssh-key-copied');
+    }, 1000);
   };
 }
 
