@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css" />
   <!-- https://realfavicongenerator.net -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -16,8 +16,75 @@
   <meta name="theme-color" content="#ffffff">
   <!-- end favicon -->
   <title>Public Cryptography - dblitt.com</title>
+  <style>
+  .highlight {
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    color: #586e75;
+  }
+  pre.ssh-key {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  pre.ssh-key:hover {
+    cursor: pointer;
+  }
+  .title+pre.ssh-key {
+    margin-top: -12px;
+  }
+  div.ssh-key {
+    padding-bottom: 1em;
+  }
+  pre.ssh-key-copied {
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #ffdd57;
+  }
+  </style>
 </head>
 <body>
-  Hello
+  <section class="hero">
+    <div class="hero-body" style="padding-bottom:2em;">
+      <div class="container">
+        <h1 class="title">dblitt's public cryptography</h1>
+        <!-- <p class="subtitle">test</p> -->
+      </div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0;">
+    <div class="container" style="padding-bottom:1em;">
+      <h2 class="title is-4">ssh keys (click to copy)</h2>
+    </div>
+    <div class="container ssh-key">
+      <p class="is-size-5">daniel@xps-13</p>
+      <pre class="ssh-key">
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCzm8205J32Jg2Onk8ti47k6a+Mvi3c3vq5hKKZR6RlxHclIZ+aoPAthOi79HJmyIPmRgvFkRPkIhEeItoqryyr2BTF+ioWihy7VhLtVhh2d71qKLnAdQ1DqCcXhVRacFEA2pOpfrn7VQXeYTcVjkC7hqsXFm+UlPZlzyU43yZSkJbisJbqzf/7EPvj+4SzjCtOd0OZJ4wKwaagAen1CVhNvWxK/cnj2hxr3MdOOd/t2kQxBXTYrOAnQXiuX0gCtRbn9Irkb3u4ePx+JMtpHeQCWNDsdQ7f/0MkP3o7fiYKUwO5B9gZLRxeLlZR1ZLM/qz7PvKPNw2GqBO1N8LWasJjlKBclmHdkZnoGImdw4MnDWN6JfXtNGdhIs8mo+67AVt0Qhg0+X7UfTGJbuJ0FRWNBPD50CYiP/B7UwpJVsJB7gH4nbREeSVfxwYTAclTJW4F9DTrQD+o2qwBMUJCmdL57JDQcbQEKaDmJkoVbYwJ+FMbZupgxpuyWe/Ttbj7dutBmgtzCl939IaF1WaUYrdcAAQ67ozqh2qUUHrzylAcZkHV9OduqaefAvfsVSnsyg7pZlAfp0kk92wKT6ZEOo7+RRJp4yNOvZ6br9/SGZB6XIsc12JJAftjHMPP0jGpEXxdd//8ntnyIyMSd6j08ZrMteczgRNmhrzUZNf9CkQPpw== daniel@xps-13
+      </pre>
+    </div>
+    <div class="container ssh-key">
+      <p class="is-size-5">daniel@xps-13</p>
+      <pre class="ssh-key">
+        this is my other public ssh key (i promise)
+      </pre>
+    </div>
+  </section>
+<script type="text/javascript">
+
+for (let item of document.querySelectorAll('pre.ssh-key')) {
+  item.onclick = () => {
+    copyToClipboard(item.innerText);
+    item.classList.add('ssh-key-copied')
+  };
+}
+
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
+</script>
 </body>
 </html>
